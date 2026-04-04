@@ -1,1 +1,1 @@
-# Humam_Activity_Recognition_Proj1
+# Humam_Activity_Recognition
