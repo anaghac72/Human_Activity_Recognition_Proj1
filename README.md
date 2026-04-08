@@ -1,4 +1,4 @@
-# Project Title:-Humam_Activity_Recognition
+# Project Title:-Human Activity Recognition(HAR)
 # Team Members:-
 | Name            | Course       | Register Number |
 |:----------------|:------------:|:---------------:|
