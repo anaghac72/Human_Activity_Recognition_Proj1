@@ -3,7 +3,7 @@
 | Name            | Course       | Register Number |
 |:----------------|:------------:|:---------------:|
 | Anagha C        | DACS         |     253126      |   
-| BEN FLIS ZIYA   | CSDA         |                 |
+| BEN FLIS ZIYA   | CSDA         |     253018      |
 | LANIYA MOHAN    | BioAI        |                 |
 
 # Dataset
