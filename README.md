@@ -34,7 +34,7 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 # Methdology Overview:
 
-**Data Preprocessing**
+### Data Preprocessing
 
 | Step | Description |
 |------|-------------|
@@ -44,14 +44,14 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 ---
 
-### Stage 3 — Feature Engineering
+### Feature Engineering
 - Time-series sliding windows
 - **128 timesteps × 6 features** (3-axis accelerometer + 3-axis gyroscope)
 - Time-domain and frequency-domain features extracted
 
 ---
 
-### Stage 4 — Model Training
+### Model Training
 
 | Model | Type | Feature Input |
 |-------|------|---------------|
@@ -63,7 +63,7 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 ---
 
-### Stage 5 — Evaluation Metrics
+### Evaluation Metrics
 
 | Metric | Purpose |
 |--------|---------|
@@ -75,7 +75,7 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 ---
 
-### Stage 6 — Generalization Testing
+###  Generalization Testing
 - Models evaluated on **unseen subjects**
 - Cross-subject validation to test real-world generalizability
 - Final comparison of SVM vs. Random Forest vs. LSTM
@@ -100,10 +100,3 @@ Evaluation (Accuracy · Precision · Recall · F1 · Confusion Matrix)
 Generalization on Unseen Subjects
       ↓
 Model Comparison & Insights
-# Results:-
-
-|Model	| Accuracy |
-|-------|----------|
-| SVM	  |   ~92%   |
-|Random Forest |	~95% |
-| LSTM	|~95%       |
