@@ -33,6 +33,73 @@ The dataset is fairly balanced across all six activities.
 Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz8El4YFV?usp=drive_link
 
 # Methdology Overview:
+
+**Data Preprocessing**
+
+| Step | Description |
+|------|-------------|
+| Load Signals | Inertial sensor signals loaded from raw dataset |
+| Normalize | Feature scaling applied to sensor readings |
+| Encode Labels | Activity labels converted to numerical format |
+
+---
+
+### Stage 3 — Feature Engineering
+- Time-series sliding windows
+- **128 timesteps × 6 features** (3-axis accelerometer + 3-axis gyroscope)
+- Time-domain and frequency-domain features extracted
+
+---
+
+### Stage 4 — Model Training
+
+| Model | Type | Feature Input |
+|-------|------|---------------|
+| Support Vector Machine (SVM) | Classical ML | Handcrafted features |
+| Random Forest | Classical ML | Handcrafted features |
+| Long Short-Term Memory (LSTM) | Deep Learning | Raw sequence (learned features) |
+
+> Compares handcrafted feature engineering vs. deep learning-based feature extraction.
+
+---
+
+### Stage 5 — Evaluation Metrics
+
+| Metric | Purpose |
+|--------|---------|
+| Accuracy | Overall classification performance |
+| Precision | Correctness of positive predictions |
+| Recall | Coverage of actual positives |
+| F1-Score | Harmonic mean of Precision & Recall |
+| Confusion Matrix | Per-class prediction breakdown |
+
+---
+
+### Stage 6 — Generalization Testing
+- Models evaluated on **unseen subjects**
+- Cross-subject validation to test real-world generalizability
+- Final comparison of SVM vs. Random Forest vs. LSTM
+
+---
+
+## 🔁 Pipeline Summary
+
+```
+UCI HAR Dataset
+      ↓
+Data Preprocessing (Normalize → Encode Labels)
+      ↓
+Feature Engineering (128 timesteps × 6 features)
+      ↓
+ ┌─────────┬──────────────┬────────┐
+ │   SVM   │ Random Forest│  LSTM  │
+ └─────────┴──────────────┴────────┘
+      ↓
+Evaluation (Accuracy · Precision · Recall · F1 · Confusion Matrix)
+      ↓
+Generalization on Unseen Subjects
+      ↓
+Model Comparison & Insights
 # Results:-
 
 |Model	| Accuracy |
