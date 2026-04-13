@@ -17,7 +17,7 @@ st.set_page_config(
 # -----------------------
 import os
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "model", "rf_model.pkl")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "rf_model.pkl")
 model = joblib.load(MODEL_PATH)  # or svm_model.pkl
 
 # -----------------------
