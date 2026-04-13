@@ -34,74 +34,69 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 # Methdology Overview:
 
+## 🔧 Methods
+
 ### Data Preprocessing
 
-| Step | Description |
-|------|-------------|
-| Load Signals | Inertial sensor signals loaded from raw dataset |
-| Normalize | Feature scaling applied to sensor readings |
-| Encode Labels | Activity labels converted to numerical format |
+| Step           | Description                                                                             |
+| -------------- | --------------------------------------------------------------------------------------- |
+| Load Data      | Inertial sensor signals (accelerometer & gyroscope) are loaded from the UCI HAR dataset |
+| Data Cleaning  | Data is checked for consistency and missing values                                      |
+| Normalization  | Standard scaling is applied (important for SVM)                                         |
+| Label Encoding | Activity labels are converted into numerical classes (1–6)                              |
 
 ---
 
 ### Feature Engineering
-- Time-series sliding windows
-- **128 timesteps × 6 features** (3-axis accelerometer + 3-axis gyroscope)
-- Time-domain and frequency-domain features extracted
+
+#### Handcrafted Features (SVM & Random Forest)
+
+| Aspect         | Details                                        |
+| -------------- | ---------------------------------------------- |
+| Total Features | 561                                            |
+| Feature Types  | Time-domain and Frequency-domain               |
+| Examples       | Mean, Standard Deviation, Energy, FFT features |
+
+#### Raw Time-Series Input (LSTM)
+
+| Aspect            | Details                                     |
+| ----------------- | ------------------------------------------- |
+| Window Size       | 128 timesteps                               |
+| Features per Step | 6 (3-axis accelerometer + 3-axis gyroscope) |
+| Approach          | Sliding window segmentation                 |
+| Feature Learning  | Automatic (no manual extraction)            |
 
 ---
 
 ### Model Training
 
-| Model | Type | Feature Input |
-|-------|------|---------------|
-| Support Vector Machine (SVM) | Classical ML | Handcrafted features |
-| Random Forest | Classical ML | Handcrafted features |
-| Long Short-Term Memory (LSTM) | Deep Learning | Raw sequence (learned features) |
-
-> Compares handcrafted feature engineering vs. deep learning-based feature extraction.
+| Model         | Type          | Input           | Key Advantage                         |
+| ------------- | ------------- | --------------- | ------------------------------------- |
+| SVM           | Classical ML  | 561 features    | Works well with high-dimensional data |
+| Random Forest | Classical ML  | 561 features    | Robust to noise and overfitting       |
+| LSTM          | Deep Learning | 128×6 sequences | Captures temporal dependencies        |
 
 ---
 
 ### Evaluation Metrics
 
-| Metric | Purpose |
-|--------|---------|
-| Accuracy | Overall classification performance |
-| Precision | Correctness of positive predictions |
-| Recall | Coverage of actual positives |
-| F1-Score | Harmonic mean of Precision & Recall |
-| Confusion Matrix | Per-class prediction breakdown |
+| Metric           | Purpose                              |
+| ---------------- | ------------------------------------ |
+| Accuracy         | Overall performance                  |
+| Precision        | Correctness of positive predictions  |
+| Recall           | Ability to identify actual positives |
+| F1-score         | Balance between precision and recall |
+| Confusion Matrix | Class-wise performance analysis      |
 
 ---
 
-###  Generalization Testing
-- Models evaluated on **unseen subjects**
-- Cross-subject validation to test real-world generalizability
-- Final comparison of SVM vs. Random Forest vs. LSTM
+### Generalization Testing
 
----
-
-## 🔁 Pipeline Summary
-
-```
-UCI HAR Dataset
-      ↓
-Data Preprocessing (Normalize → Encode Labels)
-      ↓
-Feature Engineering (128 timesteps × 6 features)
-      ↓
- ┌─────────┬──────────────┬────────┐
- │   SVM   │ Random Forest│  LSTM  │
- └─────────┴──────────────┴────────┘
-      ↓
-Evaluation (Accuracy · Precision · Recall · F1 · Confusion Matrix)
-      ↓
-Generalization on Unseen Subjects
-      ↓
-Model Comparison & Insights
-
-```
+| Step                     | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| Unseen Data Testing      | Models are evaluated on subjects not seen during training |
+| Cross-Subject Validation | Ensures robustness and real-world applicability           |
+| Model Comparison         | Performance of SVM, Random Forest, and LSTM is analyzed   |
 # Live Streamlit Deployment
 https://humanactivityrecognitionproj1-ayeoz2sbtfwgstmhxy5xtl.streamlit.app
 
