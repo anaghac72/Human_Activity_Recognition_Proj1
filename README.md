@@ -11,7 +11,6 @@ Human Activity Recognition (HAR) using smartphone sensor data is an essential pr
 The objective of this project is to develop a robust system that can accurately classify human physical activities—such as walking, sitting, standing, running, and stair climbing-using sensor data from smartphones. The project requires researchers to extract time-domain and frequency-domain features from the dataset and use Support Vector Machines (SVM), Random Forest and Long Short-Term Memory (LSTM) networks as machine learning models.
 
 # Dataset Details:-
-Dataset Description:-
 
 Dataset: UCI Human Activity Recognition (HAR) Dataset
 Source: UCI Machine Learning Repository
