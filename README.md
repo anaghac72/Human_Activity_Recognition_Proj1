@@ -34,7 +34,7 @@ The dataset is fairly balanced across all six activities.
 
 Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz8El4YFV?usp=drive_link
 
-# Methdology Overview:
+# Methdology Overview:-
 
 ### Data Preprocessing
 
