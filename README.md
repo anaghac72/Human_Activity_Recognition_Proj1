@@ -13,8 +13,11 @@ The objective of this project is to develop a robust system that can accurately 
 # Dataset Details:-
 
 Dataset: UCI Human Activity Recognition (HAR) Dataset
+
 Source: UCI Machine Learning Repository
+
 Total Samples: ~10,000
+
 Features:
 Accelerometer (X, Y, Z)
 Gyroscope (X, Y, Z)
