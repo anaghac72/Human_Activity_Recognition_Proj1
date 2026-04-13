@@ -100,7 +100,8 @@ Evaluation (Accuracy · Precision · Recall · F1 · Confusion Matrix)
 Generalization on Unseen Subjects
       ↓
 Model Comparison & Insights
----
 
+```
 # Streamlit App
 link : http://192.168.1.4:8502
+
