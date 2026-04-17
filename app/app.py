@@ -17,7 +17,7 @@ st.write("Predict human activities using trained ML models")
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load("app/rf_model.pkl")  # adjust path if needed
+        model = joblib.load("models/rf_model.pkl")  # adjust path if needed
         return model
     except FileNotFoundError:
         st.error("❌ Model file not found! Please check path.")
