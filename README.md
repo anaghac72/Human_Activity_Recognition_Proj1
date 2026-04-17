@@ -230,7 +230,28 @@ source venv/bin/activate
 
 
 ⁠ <br>
+### 3. Install Dependencies
 
+ ⁠bash
+pip install -r requirements.txt
+
+
+⁠ <br>
+
+### 4. Run the Application
+
+ ⁠bash
+streamlit run app/app.py
+
+
+<br>
+
+### 5. Open in Browser
+
+[http://localhost:8501](http://localhost:8501)
+
+
+```
 ### 🔗 Live Application
 👉 https://humanactivityrecognitionproj1-ayeoz2sbtfwgstmhxy5xtl.streamlit.app/
 
