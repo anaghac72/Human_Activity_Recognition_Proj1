@@ -218,7 +218,7 @@ LSTM
 
 Random Forest performed best in this project, achieving the highest accuracy and overall evaluation metrics. It effectively handled high-dimensional features and provided robust predictions. Although LSTM is suitable for time-series data, it did not outperform Random Forest in this implementation.
 
-## 📸 Application Screenshots
+
 ## 📸 Application Screenshots
 
 <br>
@@ -358,6 +358,7 @@ streamlit run app/app.py
 
 <br>
 
+```
 
 # Live Streamlit Deployment
 https://humanactivityrecognitionproj1-ayeoz2sbtfwgstmhxy5xtl.streamlit.app
