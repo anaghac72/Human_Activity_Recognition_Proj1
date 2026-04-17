@@ -8,7 +8,7 @@
 
 # Problem Statement :-
 Human Activity Recognition (HAR) using smartphone sensor data is an essential predictive analytics task which provides benefits to healthcare and fitness tracking and smart environments. The sensors inside modern smartphones which include accelerometers and gyroscopes create continuous motion data through their measurement functions. The process of converting raw sensor data into accurate activity classifications presents ongoing difficulties for researchers in the field.
-
+<br>
 The objective of this project is to develop a robust system that can accurately classify human physical activities—such as walking, sitting, standing, running, and stair climbing-using sensor data from smartphones. The project requires researchers to extract time-domain and frequency-domain features from the dataset and use Support Vector Machines (SVM), Random Forest and Long Short-Term Memory (LSTM) networks as machine learning models.
 
 # Dataset Details:-
@@ -161,13 +161,26 @@ Dataset link:- https://drive.google.com/drive/folders/14wQNbXFOY0CyP2ej2WcB5WXsz
 
 
 
-## Model Comparison
+##  Model Comparison
+
 <br>
-<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/f1cb7fcc-68bc-44c8-8dcb-4d82335cbefb" />
+
+<p align="center">
+  <img width="630" height="470" alt="Model Comparison"
+  src="https://github.com/user-attachments/assets/f1cb7fcc-68bc-44c8-8dcb-4d82335cbefb" />
+</p>
+
+<br><br>
+
+##  Accuracy Comparison
+
 <br>
-## Accuracy Comparison
-<br>
-<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/8ffc85d4-7260-4b1b-aa50-6f7770248ea0" />
+
+<p align="center">
+  <img width="567" height="455" alt="Accuracy Comparison"
+  src="https://github.com/user-attachments/assets/8ffc85d4-7260-4b1b-aa50-6f7770248ea0" />
+</p>
+
 <br>
 
 
