@@ -317,48 +317,38 @@ streamlit run app/app.py
 
 [http://localhost:8501](http://localhost:8501)
 
-### 6. Project structure
-```markdown
+##  Project Structure
 
 ```
-
 Human_Activity_Recognition_Proj1/
-│
 ├── app/
 │   └── app.py
-│
 ├── models/
 │   ├── rf_model.pkl
 │   ├── svm_model.pkl
 │   └── lstm_model.keras
-│
 ├── data/
 │   ├── train/
 │   └── test/
-│
 ├── results/
 │   ├── reports/
 │   │   ├── svm_report.txt
 │   │   ├── rf_report.txt
 │   │   └── lstm_report.txt
-│   │
 │   └── plots/
 │       ├── confusion_matrix_rf.png
 │       ├── confusion_matrix_svm.png
 │       ├── confusion_matrix_lstm.png
 │       ├── model_comparison.png
 │       └── accuracy_comparison.png
-│
 ├── notebooks/
 │   ├── svm_model.ipynb
 │   ├── rf_model.ipynb
 │   └── lstm_model.ipynb
-│
 ├── requirements.txt
 └── README.md
+```
 
-```
-```
 
 
 # Live Streamlit Deployment
