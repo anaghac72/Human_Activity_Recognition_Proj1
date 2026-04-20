@@ -21,7 +21,7 @@ Total Samples: ~10,000
 
 Features:
 Accelerometer (X, Y, Z)
-Gyroscope (X, Y, Z)
+Gyroscope (x, y, z)
 Activities (Classes):
 - Walking
 - Walking Upstairs
