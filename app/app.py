@@ -62,7 +62,7 @@ if uploaded_file is not None and model is not None:
             st.subheader("🎯 Prediction Mode")
             mode = st.selectbox(
                 "Choose mode",
-                ["Single Row", "Random Row", "Batch Prediction"]
+                ["Single Row", "Random Row", "Search Row", "Batch Prediction"]
             )
 
             # -----------------------
@@ -70,7 +70,16 @@ if uploaded_file is not None and model is not None:
             # -----------------------
             if mode == "Single Row":
                 idx = st.slider("Select Row Index", 0, len(df) - 1, 0)
-                sample = df.iloc[idx].values.reshape(1, -1)
+
+                selected_row = df.iloc[idx]
+
+                st.subheader("📋 Selected Row Details (Vertical)")
+                st.dataframe(selected_row.to_frame(name="Value"))
+
+                st.subheader("📋 Selected Row Details (Horizontal)")
+                st.dataframe(selected_row.to_frame().T)
+
+                sample = selected_row.values.reshape(1, -1)
 
                 pred = model.predict(sample)[0]
                 st.success(f"Prediction: {label_map[pred]}")
@@ -91,12 +100,51 @@ if uploaded_file is not None and model is not None:
             # -----------------------
             elif mode == "Random Row":
                 idx = np.random.randint(0, len(df))
-                sample = df.iloc[idx].values.reshape(1, -1)
 
-                st.write(f"Random Row: {idx}")
+                selected_row = df.iloc[idx]
+
+                st.write(f"🎲 Random Row Index: {idx}")
+
+                st.subheader("📋 Random Row Details")
+                st.dataframe(selected_row.to_frame().T)
+
+                sample = selected_row.values.reshape(1, -1)
 
                 pred = model.predict(sample)[0]
                 st.success(f"Prediction: {label_map[pred]}")
+
+            # -----------------------
+            # SEARCH ROW
+            # -----------------------
+            elif mode == "Search Row":
+                search_idx = st.number_input(
+                    "🔍 Enter Row Index",
+                    min_value=0,
+                    max_value=len(df) - 1,
+                    value=0
+                )
+
+                if st.button("Show Row"):
+                    selected_row = df.iloc[search_idx]
+
+                    st.subheader("📋 Searched Row Details")
+                    st.dataframe(selected_row.to_frame().T)
+
+                    sample = selected_row.values.reshape(1, -1)
+
+                    pred = model.predict(sample)[0]
+                    st.success(f"Prediction: {label_map[pred]}")
+
+                    # Probabilities
+                    if hasattr(model, "predict_proba"):
+                        probs = model.predict_proba(sample)[0]
+                        prob_df = pd.DataFrame({
+                            "Activity": list(label_map.values()),
+                            "Probability": probs
+                        })
+
+                        st.subheader("📊 Prediction Probabilities")
+                        st.bar_chart(prob_df.set_index("Activity"))
 
             # -----------------------
             # BATCH PREDICTION
@@ -111,7 +159,7 @@ if uploaded_file is not None and model is not None:
                 st.subheader("📊 Predictions (First 10)")
                 st.dataframe(results.head(10))
 
-                # Count plot
+                # Distribution
                 st.subheader("📈 Activity Distribution")
                 counts = results["Prediction"].value_counts()
                 st.bar_chart(counts)
@@ -123,4 +171,4 @@ if uploaded_file is not None and model is not None:
 # FOOTER
 # -----------------------
 st.markdown("---")
-st.markdown("Developed for Human Activity Recognition Project")
+st.markdown("Developed for Human Activity Recognition Project 🚀")
