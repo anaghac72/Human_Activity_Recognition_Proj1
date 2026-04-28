@@ -357,6 +357,9 @@ Human_Activity_Recognition_Proj1/
 └── README.md
 ```
 
+Presentation Link
+https://canva.link/g5gw8s63yeqyumd
+
 
 
 # Live Streamlit Deployment
