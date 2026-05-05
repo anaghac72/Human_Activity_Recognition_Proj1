@@ -2,7 +2,7 @@
 # Team Members:-
 | Name            | Course       | Register Number |
 |:----------------|:------------:|:---------------:|
-| ANAGHA C        | DACS         |     253126      |   
+| ANAGHA C        | DACS         |     253126      |  
 | BEN FLIS ZIYA   | CSDA         |     253018      |
 | LANIYA MOHAN    | BioAI        |     253218      |
 
